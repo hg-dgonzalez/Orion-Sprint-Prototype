@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orion Test</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/cover.css">
+
+<!-- Custom styles for this template -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+body {
+	min-height: 0px;
+	padding-top: 0px;
+	background: url('/images/hgmd_main_bg.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.h1, h1 {
+	color: #fff;
+}
+</style>
+</head>
+
+<body>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="inner cover">
+        <h1 class="text-center">Survey Investigator</h1>
+        <p>&nbsp;</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form style="padding-top: 8% !important; padding-right: 15% !important; padding-bottom: 8% !important; padding-left: 15% !important;">
+              <div class="form-group">
+                <label class="pull-left">Username</label>
+                <input type="text" class="form-control" placeholder="DEMO - Click 'Sign In'">
+              </div>
+              <div class="form-group">
+                <label class="pull-left">Password</label>
+                <input type="password" class="form-control" placeholder="DEMO - Click 'Sign In'">
+              </div>
+              <p>&nbsp;</p>
+				<div class="text-center"><a class="btn btn-primary btn-lg" href="homepage.html" role="button">&nbsp;&nbsp;&nbsp;&nbsp;Sign In&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<!-- Latest compiled and minified JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script> 
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$('body').scrollspy({
+    target: '.bs-docs-sidebar',
+    offset: 40
+});
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+$('body').on('click', function (e) {
+    $('[data-toggle="popover"]').each(function () {
+        //the 'is' for buttons that trigger popups
+        //the 'has' for icons within a button that triggers a popup
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+        }
+    });
+}); 
+
+</script>
+</body>
+</html>

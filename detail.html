@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Investigation Detail</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/cover.css">
+
+<!-- Custom styles for this template -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+body {
+	min-height: 0px;
+	padding-top: 0px;
+}
+.modal-lg {
+	width: 99%;
+}
+.search-surveys .survey-details .btn {
+	display: none;
+}
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+  <h1 style="color: #fff;" class="text-center">Investigation Detail</h1>
+  <div class="row">
+    <div class="col-md-6"> <a href="index.html" class="btn btn-default btn-lg pull-left" role="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a> </div>
+    <div class="col-md-6">
+      <div class="btn-group btn-group-lg pull-right" role="group"> <a href="sampleFile.xls" class="btn btn-default btn-lg" role="button"><i class="fa fa-share-square-o" aria-hidden="true"></i> Export</a><a href="#" class="btn btn-danger btn-lg" role="button" onclick="javascript:$('#chrisresults').hide();"><i class="fa fa-minus" aria-hidden="true"></i> Remove Survey(s)</a><a href="#" class="btn btn-success btn-lg" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i> Add Survey(s)</a> </div>
+    </div>
+  </div>
+  <p>&nbsp;</p>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body text-left">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Investigation Details</h3>
+          </div>
+          <div class="col-md-6">
+            <select class="form-control">
+              <option>Status</option>
+              <option>Open</option>
+              <option>Closed</option>
+              <option>Pending</option>
+              <option>Escalated</option>
+              <option>New</option>
+            </select>
+          </div>
+        </div>
+        <!-- chris-->
+        <div id="save-indicator" style="" class="alert alert-warning">Last saved: never.</div>
+        <!--/chris --> 
+        <!-- frankie -->
+        <form id="investigation-details-form">
+          <div class="form-group">
+            <label for="exampleInputEmail1">CaseID:</label>
+            <input id ='CaseId-Text'type="Text" class="form-control" disabled="true">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputTitle">Title:</label>
+            <input id = "Title-Text"type="Title" class="form-control" id="exampleInputTitle">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputTitle">Notes:</label>
+            <ul id="note-list">
+            </ul>
+            <textarea id="note-text" class="form-control" rows="3"></textarea>
+          </div>
+          <button id="add-note" type="Add Note" class="btn btn-default">Add Note</button>
+          <p>&nbsp;</p>
+          <div class="btn-group btn-group-lg pull-left" role="group">
+            <a href="homepage.html" id="Hold-btn"  type="Hold" class="btn btn-default"><i class="fa fa-pause-circle" aria-hidden="true"></i> Hold</a>
+            <a href="homepage.html" id="Delete-btn" type="Delete" class="btn btn-danger"><i class="fa fa-minus-circle" aria-hidden="true"></i> Delete</a>
+            <a href="homepage.html" id="Close-btn" type="Close" class="btn btn-primary"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
+          </div>
+          </div>
+        </form>
+        <!--/frankie --> 
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3>Added Surveys</h3>
+          <!--chris results -->
+          
+          <div style="height: 600px; overflow:auto; display: none;" class="added-surveys" id="chrisresults">
+            <table class="table survey-results">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>PWID</th>
+                  <th>Display Name</th>
+                  <th>Email</th>
+                  <th>Provider Name</th>
+                  <th>Submit Date <span class="caret"></span></th>
+                  <th>Submit IP</th>
+                  <th>Confirm Date</th>
+                  <th>Confirm IP</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Suppressed</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="test2">
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- /chris results --> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title pull-left">Advanced Survey Search</h4>
+      </div>
+      <div class="modal-body pull-left"> 
+        <!-- huy -->
+        <form class="form">
+          <div class="row">
+            <div class="form-group  col-xs-3">
+              <label for="exampleInputEmail1">Provider ID</label>
+              <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="XMQ8P" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group col-xs-3">
+              <label for="exampleInputEmail1">IP Address</label>
+              <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="192.168.1.1" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group col-xs-6">
+              <label for="exampleInputEmail1">Email Address</label>
+              <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="Huy.Hoang@healthgrades.com" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-xs-3">
+              <label for="exampleInputEmail1">Mobile Number</label>
+              <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="ie..303-332-9218" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group col-xs-3">
+              <label for="exampleInputEmail1">Audited By</label>
+              <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="Jim Jones" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group col-xs-6">
+              <label for="exampleInputEmail1">User Comment Text</label>
+              <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="form-group col-xs-6">
+            <label for="exampleInputEmail1">Submit Start Date</label>
+            <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input type="text" class="form-control" placeholder="MM/DD/YYYY" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="form-group col-xs-6">
+            <label for="exampleInputEmail1">Confirm Start Date</label>
+            <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input type="text" class="form-control" placeholder="MM/DD/YYYY" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-6">
+            <label for="exampleInputEmail1">Submit End Date</label>
+            <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input type="text" class="form-control" placeholder="MM/DD/YYYY" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="form-group col-xs-6">
+            <label for="exampleInputEmail1">Confirm End Date</label>
+            <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input type="text" class="form-control" placeholder="MM/DD/YYYY" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="javascript:$('#christable, #modalftr').show();"><span class="glyphicon glyphicon-search"> </span> Search</button>
+        </form>
+        <div style="height: 400px; overflow:auto; display: none;" class="search-surveys" id="christable">
+          <table class="table survey-results">
+            <thead>
+              <tr>
+                <th></th>
+                <th>PWID</th>
+                <th>Display Name</th>
+                <th>Email</th>
+                <th>Provider Name</th>
+                <th>Submit Date <span class="caret"></span></th>
+                <th>Submit IP</th>
+                <th>Confirm Date</th>
+                <th>Confirm IP</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Suppressed</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="test">
+            </tbody>
+          </table>
+        </div>
+        
+        <!--/huy --> 
+        
+      </div>
+      <div class="modal-footer">
+        <div style="display: none;" id="modalftr">
+          <button type="button" class="btn btn-primary pull-left">Select All</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="javascript:$('#chrisresults').show();" data-dismiss="modal">Add Survey(s)</button>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content --> 
+  </div>
+  <!-- /.modal-dialog --> 
+</div>
+<!-- /.modal --> 
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script><!-- Latest compiled and minified JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script src="https://gitcdn.github.io/bootstrap-toggle/3.3.7/js/bootstrap-toggle.min.js"></script> 
+<script src="/js/orion.js"></script>
+<script>
+</script>
+</body>
+</html>

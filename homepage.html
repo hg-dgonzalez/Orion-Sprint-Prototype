@@ -1,0 +1,497 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Survey Investigator</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/cover.css">
+
+<!-- Custom styles for this template -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+body {
+	min-height: 0px;
+	padding-top: 0px;
+}
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+  <h1 style="color:#fff;" class="text-center">Survey Investigator</h1>
+  <div class="row">
+    <div class="col-md-6"> <a href="index.html" class="btn btn-default btn-lg pull-left" role="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a> </div>
+    <div class="col-md-6"> <a href="detail.html" class="btn btn-primary btn-lg pull-right" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i> Create New Investigation</a> </div>
+  </div>
+  <p>&nbsp;</p>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body"> 
+          
+          <!-- huy -->
+          <form class="form">
+            <div class="row">
+              <div class="form-group  col-xs-3">
+                <label for="exampleInputEmail1">Provider ID</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="XMQ8P">
+                </div>
+              </div>
+              <div class="form-group col-xs-3">
+                <label for="exampleInputEmail1">IP Address</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="192.168.1.1">
+                </div>
+              </div>
+              <div class="form-group col-xs-6">
+                <label for="exampleInputEmail1">Email Address</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="Huy.Hoang@healthgrades.com">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-xs-3">
+                <label for="exampleInputEmail1">Mobile Number</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="ie..303-332-9218">
+                </div>
+              </div>
+              <div class="form-group col-xs-3">
+                <label for="exampleInputEmail1">Audited By</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="Jim Jones">
+                </div>
+              </div>
+              <div class="form-group col-xs-6">
+                <label for="exampleInputEmail1">User Comment Text</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="form-group col-xs-6">
+              <label for="exampleInputEmail1">Submit Start Date</label>
+              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+            <div class="form-group col-xs-6">
+              <label for="exampleInputEmail1">Confirm Start Date</label>
+              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-xs-6">
+              <label for="exampleInputEmail1">Submit End Date</label>
+              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+            <div class="form-group col-xs-6">
+              <label for="exampleInputEmail1">Confirm End Date</label>
+              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary"><span class="glyphicon glyphicon-search"> </span> Search</button>
+          <!-- /huy --> 
+          <!-- mike results -->
+          <div id="miketable" style="display: block;">
+            <div class="row">
+              <div class="col-md-10"> </div>
+              <div class="col-md-2">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> </button>
+                  <button type="button" class="btn btn-default" onclick="javascript:$('#kerrytable').show();$('#miketable').hide();"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> </button>
+                </div>
+              </div>
+            </div>
+            <p>&nbsp;</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Case Number</th>
+                  <th>Case Origin</th>
+                  <th>Subject</th>
+                  <th>PWID</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>861156</td>
+                  <td>call</td>
+                  <td>Comments missing</td>
+                  <td>Y8B4M</td>
+                  <td>New</td>
+                  <td><a class="btn btn-info preview-button" onclick="javascript:$('#prev1').show();$('#prev2, #prev3').hide();">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+                <tr>
+                  <td>786675</td>
+                  <td>call</td>
+                  <td>Duplicate Surveys</td>
+                  <td>XMQ8P</td>
+                  <td>Open</td>
+                  <td><a class="btn btn-info preview-button" onclick="javascript:$('#prev2').show();$('#prev1, #prev3').hide();">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+                <tr>
+                  <td>748374</td>
+                  <td>internal</td>
+                  <td>Similar Emails</td>
+                  <td>YLV6J</td>
+                  <td>Pending</td>
+                  <td><a class="btn btn-info preview-button" onclick="javascript:$('#prev3').show();$('#prev1, #prev2').hide();">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+                <tr>
+                  <td>989876</td>
+                  <td>email</td>
+                  <td>Score question</td>
+                  <td>4DETSE</td>
+                  <td>Open</td>
+                  <td><a class="btn btn-info preview-button">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Inv</td>
+                  <td>Missing comments</td>
+                  <td>2TSED</td>
+                  <td>Open</td>
+                  <td><a class="btn btn-info preview-button">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+                <tr>
+                  <td>987567</td>
+                  <td>internal</td>
+                  <td>Multiple comments for provider</td>
+                  <td>XDE3XY</td>
+                  <td>New</td>
+                  <td><a class="btn btn-info preview-button">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Inv</td>
+                  <td>Missing comments</td>
+                  <td>X4JIKJ</td>
+                  <td>Closed</td>
+                  <td><a class="btn btn-info preview-button">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+                <tr>
+                  <td>956568</td>
+                  <td>email</td>
+                  <td>Survey not showing</td>
+                  <td>MJU6YL</td>
+                  <td>Pending</td>
+                  <td><a class="btn btn-info preview-button">Preview</a> <a class="btn btn-success" href="detail2.html">Edit</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- /mike results --> 
+          
+          <!-- kerry -->
+          <div id="kerrytable" style="display: none;">
+            <div class="row">
+              <div class="col-md-10"> </div>
+              <div class="col-md-2">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-default" onclick="javascript:$('#miketable').show();$('#kerrytable').hide();"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> </button>
+                  <button type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> </button>
+                </div>
+              </div>
+            </div>
+            <p>&nbsp;</p>
+            <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>New</th>
+      <th>Open</th>
+      <th>Pending</th>
+      <th>Closed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>861156 | Feedback</a></h5>
+          <list>
+            <li>Case Origin: Call</li>
+            <li>PWID: 2DQCR</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>786675 | Comments Missing</a></h5>
+          <list>
+            <li>Case Origin: Call</li>
+            <li>PWID: Y8B4M</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>748374 | Multiple Surveys</a></h5>
+          <list>
+            <li>Case Origin: Internal</li>
+            <li>PWID: 9GRWT</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>Missing comments</a></h5>
+          <list>
+            <li>Case Origin: Inv</li>
+            <li>PWID:</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>987657 | Multiple comments for...</a></h5>
+          <list>
+            <li>Case Origin: internal</li>
+            <li>PWID:XDE3XY</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>989876 | Score question</a></h5>
+          <list>
+            <li>Case Origin: Email</li>
+            <li>PWID: 4DETSE</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>956568 | Survey not showing</a></h5>
+          <list>
+            <li>Case Origin: Email</li>
+            <li>PWID: MJU6YL</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><div class="panel panel-default">
+        <div class="panel-body">
+          <h5><a>Missing comments</a></h5>
+          <list>
+            <li>Case Origin: Inv</li>
+            <li>PWID:</li>
+            <li>Reason: PES</li>
+          </list>
+        </div>
+        </div></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<!-- /kerry --> 
+          </div>
+          <!-- /kerry --> 
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3>Case Preview</h3>
+          <div id="prev1" style="display: none;">
+            <p>&nbsp;</p>
+            <dl class="dl-horizontal">
+              <dt>Case Number</dt>
+              <dd>861156</dd>
+              <dt>Subject</dt>
+              <dd>Comments missing</dd>
+              <dt>Status</dt>
+              <dd>Open</dd>
+              <dt>Case Initiator</dt>
+              <dd>Provider</dd>
+              <dt>Reason</dt>
+              <dd>PES</dd>
+              <dt>Case Origin</dt>
+              <dd>Phone Call</dd>
+            </dl>
+            <p>&nbsp;</p>
+            <dl class="dl-horizontal">
+              <dt>First Name</dt>
+              <dd>John</dd>
+              <dt>Last Name</dt>
+              <dd>Miller</dd>
+              <dt>Email Address</dt>
+              <dd><a href="#">jmiller@gmail.com</a></dd>
+              <dt>Provider Name</dt>
+              <dd>Dr. John Miller</dd>
+            </dl>
+            <div class="well">
+              <dl>
+                <dt>Work Start Time</dt>
+                <dd>1/11/17 1:22 PM</dd>
+                <dt>Created By</dt>
+                <dd>Customer Service Rep 1</dd>
+                <dt>Last Modified By</dt>
+                <dd>Customer Service Rep 1</dd>
+                <dt>Resolution</dt>
+                <dd>EMPTY</dd>
+              </dl>
+              <dl>
+                <dt>Description</dt>
+                <dd>Surveys not showing on the website</dd>
+              </dl>
+            </div>
+          </div>
+          <div id="prev2" style="display: none;">
+            <p>&nbsp;</p>
+            <dl class="dl-horizontal">
+              <dt>Case Number</dt>
+              <dd>786675</dd>
+              <dt>Subject</dt>
+              <dd>Duplicate Surveys</dd>
+              <dt>Status</dt>
+              <dd>Open</dd>
+              <dt>Case Initiator</dt>
+              <dd>Consumer</dd>
+              <dt>Reason</dt>
+              <dd>PES</dd>
+              <dt>Case Origin</dt>
+              <dd>Phone Call</dd>
+            </dl>
+            <p>&nbsp;</p>
+            <dl class="dl-horizontal">
+              <dt>First Name</dt>
+              <dd>Steve</dd>
+              <dt>Last Name</dt>
+              <dd>Smith</dd>
+              <dt>Email Address</dt>
+              <dd><a href="#">ssmith@gmail.com</a></dd>
+              <dt>Provider Name</dt>
+              <dd>Dr. Nimisha Shukla</dd>
+            </dl>
+            <div class="well">
+              <dl>
+                <dt>Work Start Time</dt>
+                <dd>1/12/17 11:34 PM</dd>
+                <dt>Created By</dt>
+                <dd>Chris Christian</dd>
+                <dt>Last Modified By</dt>
+                <dd>Cecil Cach</dd>
+                <dt>Resolution</dt>
+                <dd></dd>
+              </dl>
+              <dl>
+                <dt>Description</dt>
+                <dd>Duplicate surveys from the same email for the same provider</dd>
+              </dl>
+            </div>
+          </div>
+          <div id="prev3" style="display: none;">
+            <p>&nbsp;</p>
+            <dl class="dl-horizontal">
+              <dt>Case Number</dt>
+              <dd>748374</dd>
+              <dt>Subject</dt>
+              <dd>Similar Emails</dd>
+              <dt>Status</dt>
+              <dd>Pending</dd>
+              <dt>Case Initiator</dt>
+              <dd>Internal</dd>
+              <dt>Reason</dt>
+              <dd>PES</dd>
+              <dt>Case Origin</dt>
+              <dd>internal</dd>
+            </dl>
+            <p>&nbsp;</p>
+            <dl class="dl-horizontal">
+              <dt>First Name</dt>
+              <dd>Sameer</dd>
+              <dt>Last Name</dt>
+              <dd>Mehta</dd>
+              <dt>Email Address</dt>
+              <dd><a href="#">smehta@DenverHealth.com</a></dd>
+              <dt>Provider Name</dt>
+              <dd>Dr. Sameer Mehta</dd>
+            </dl>
+            <div class="well">
+              <dl>
+                <dt>Work Start Time</dt>
+                <dd>1/12/17 3:32 PM</dd>
+                <dt>Created By</dt>
+                <dd>Jen Jones</dd>
+                <dt>Last Modified By</dt>
+                <dd>Jen Jones</dd>
+                <dt>Resolution</dt>
+                <dd>Suppression</dd>
+              </dl>
+              <dl>
+                <dt>Description</dt>
+                <dd>Duplicate surveys from the same email for the same provider</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container --> 
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script><!-- Latest compiled and minified JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script src="https://gitcdn.github.io/bootstrap-toggle/3.3.7/js/bootstrap-toggle.min.js"></script>
+<script src="/js/orion.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>
